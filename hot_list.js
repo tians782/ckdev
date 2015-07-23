@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() {     
 	$('.swiper-slide').html('<span class="loadingAni on"><span></span><span></span><span></span></span>');
 	var page_btn = $('.list_hotType a'),
 		wrapper_con,wrapper_contain,
