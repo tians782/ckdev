@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>售后服务</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body class="setbg">
+	<div class="comment_message">
+		<div class="info_message">
+			<img src="./images/pic.png" />
+			<span>爱因斯坦的妹妹</span>
+			<a class="comment_submit">提交</a>
+		</div>
+		<textarea placeholder="写下你对TA的留言OR评论"></textarea>
+	</div>
+	<div class="banner_bg">
+		<div class="set_con">
+			<div class="set_btn"></div>
+			<div class="edit_content">
+				<a href="system.html">编辑资料</a>
+				<a href="javascript:;">退出账号</a>
+			</div>
+		</div>
+		<div class="header_pic_con">
+			<div class="header_pic"></div>
+			<span>爱因斯坦的妹妹</span>
+		</div>
+		<nav>
+			<a href="show.html">SHOW</a>
+			<a href="crown.html" >皇冠</a>
+			<a href="wardrobe.html" class="selected">衣橱</a>
+			<a href="show.html">留言</a>
+			<a href="show.html">卡券</a>
+		</nav>
+	</div>
+	<div class="show_content wardrobe_con">
+		<ul class="huangguan">
+			<li class=" get"><a href="wardrobe.html">定制中</a></li>
+			<li class="selected send"><a href="service.html">售后服务</a></li>
+		</ul>
+		<div class="huagnguan_content">
+			<ul class="dingzhi">
+				<li class="">
+					<div class="service_con">
+						<img src="./images/pic.png" />
+						<div class="name_title">
+							<span>产品名称XXXX内衣</span>
+							<span>产品描述设计感特别强</span>
+						</div>
+						<div class="send_status">
+							<a href="javascript:;" class="service_btn">申请售后 > </a>
+							<div class="edit_content service_status">
+								<a href="javascript:;" class="online_message">在线留言</a>
+								<a href="tel:1111111111">联系设计师</a>
+							</div>
+						</div>
+					</div>
+					<div class='message_con'>
+						<div class="message"><span>在线留言</span></div>
+						<div class="personal_pic cl">
+							<img src="./images/pic.png">
+							<div class="txt">
+								<p>爱因斯坦的妹妹</p>
+								<span>7月14日</span>
+								<span>11:42</span>
+							</div>
+						</div>
+						<textarea class="message_content">我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</textarea>
+						<div class="status_message"><span>留言状态:</span><span class="status">正常处理</span></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+<script type="text/javascript" src='./js/zepto.min.js'></script>
+<script>
+	$(function(){
+		var $set_con = $('.set_con');
+		var active = 'tap';
+		$('.set_btn').on(active,function(){
+			if($set_con.hasClass('selected')){
+				$set_con.removeClass('selected');
+
+			}else{
+				$set_con.addClass('selected');
+			}
+		})
+
+		$('.service_btn').on(active,function(){
+			var obj = $(this).parent();
+			if(obj.hasClass('selected')){
+				obj.removeClass('selected');
+			}else{
+				obj.addClass('selected');
+			}
+		})
+
+		$('.online_message').on(active,function(){
+			$('.service_status').hide();
+			$('.comment_message').addClass('selected');
+		})
+
+		$('.comment_submit').on(active,function(){
+			var $text = $('.comment_message textarea').val();
+			$('.comment_message').removeClass('selected');
+			if($text != '') {
+				$.ajax({
+					type: 'post',
+					dataType: "json",
+					url: dataurl,
+					data: {
+						$name: $name,
+						$text: $text
+					},
+					success: function (data) {
+						if (data.retmsg == 1) {
+
+						} else {
+							alert("领取失败");
+						}
+					}, error: function () {
+						return;
+					}, complete: function () {
+						return;
+					}
+				});
+			}else{
+				alert('请完善信息！')
+			}
+		})
+	})
+</script>
+</body>
+</html>

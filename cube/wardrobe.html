@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>衣橱</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body class="setbg">
+	<div class="banner_bg">
+		<div class="set_con">
+			<div class="set_btn"></div>
+			<div class="edit_content">
+				<a href="system.html">编辑资料</a>
+				<a href="javascript:;">退出账号</a>
+			</div>
+		</div>
+		<div class="header_pic_con">
+			<div class="header_pic"></div>
+			<span>爱因斯坦的妹妹</span>
+		</div>
+		<nav>
+			<a href="show.html">SHOW</a>
+			<a href="crown.html" >皇冠</a>
+			<a href="wardrobe.html" class="selected">衣橱</a>
+			<a href="message.html">留言</a>
+			<a href="card.html">卡券</a>
+		</nav>
+	</div>
+	<div class="show_content wardrobe_con">
+		<ul class="huangguan">
+			<li class="selected get"><a href="wardrobe.html">定制中</a></li>
+			<li class="send"><a href="service.html">售后服务</a></li>
+		</ul>
+		<div class="huagnguan_content">
+			<ul class="dingzhi">
+				<li>
+					<div class="service_con">
+						<img src="./images/pic.png" />
+						<div class="name_title">
+							<span>产品名称XXXX内衣</span>
+							<span>产品描述设计感特别强</span>
+						</div>
+						<div class="send_status">
+							<span>已发货</span>
+							<a href="javascript:;" class="view_btn">查看详情</a>
+						</div>
+					</div>
+					<div class="process_con">
+						<div class="process">
+							<a>
+								<span class="selected">7月22日</span>
+								<span class="selected">7月24日</span>
+								<span class="selected">7月26日</span>
+								<span class="current">7月27日</span>
+								<span class="">7月28日</span>
+								<span class="">7月29日</span>
+								<span class="">7月30日</span>
+							</a>
+							<a class="pro_loading">
+								<p class=""><span></span></p>
+							</a>
+							<a style="width:250px;">
+								<span class="selected">通知测量</span>
+								<span class="selected">打版制图</span>
+								<span class="selected">裁片</span>
+								<span class="selected">手工制成</span>
+								<span class="selected">包装</span>
+								<span class="selected">快递</span>
+								<span class="selected">完成</span>
+							</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="service_con">
+						<img src="./images/pic.png" />
+						<div class="name_title">
+							<span>产品名称XXXX内衣</span>
+							<span>产品描述设计感特别强</span>
+						</div>
+						<div class="send_status">
+							<span>已发货</span>
+							<a href="javascript:;" class="view_btn">查看详情</a>
+						</div>
+					</div>
+					<div class="process_con">
+						<div class="process">
+							<a>
+								<span class="selected">7月22日</span>
+								<span class="selected">7月24日</span>
+								<span class="selected">7月26日</span>
+								<span class="current">7月27日</span>
+								<span class="">7月28日</span>
+								<span class="">7月29日</span>
+								<span class="">7月30日</span>
+							</a>
+							<a class="pro_loading">
+								<p class=""><span></span></p>
+							</a>
+							<a style="width:250px;">
+								<span class="selected">通知测量</span>
+								<span class="selected">打版制图</span>
+								<span class="selected">裁片</span>
+								<span class="selected">手工制成</span>
+								<span class="selected">包装</span>
+								<span class="selected">快递</span>
+								<span class="selected">完成</span>
+							</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+<script type="text/javascript" src='./js/zepto.min.js'></script>
+<script>
+	$(function(){
+		var $set_con = $('.set_con');
+		$('.set_btn').on('tap',function(){
+			if($set_con.hasClass('selected')){
+				$set_con.removeClass('selected');
+			}else{
+				$set_con.addClass('selected');
+			}
+		})
+
+		$('.view_btn').on('tap',function(){
+			var $this = $(this);
+			var obj = $this.parents('li').find('.process_con');
+			if($this.hasClass('selected')){
+				$this.html('查看详情').removeClass('selected');
+				obj.hide();
+			}else {
+				$this.html('关闭详情').addClass('selected');
+				obj.show();
+			}
+		})
+	})
+</script>
+</body>
+</html>

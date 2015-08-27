@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>女王魔方</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<div class="queenbg">
+	<div class="btn"></div>
+	<div class="queen">
+		<div class="qube_bg"></div>
+	</div>
+	<div class="queen_side">
+		<p>已有<span>540</span>位女王加入</p>
+		<a class="start_queen">开启女王之旅</a>
+		<nav>
+			<a href="javascript:;" class="queen_qube_icon">女王魔方</a>
+			<a href="javascript:;" class="queen_show_icon">女王SHOW</a>
+			<a href="javascript:;" class="queen_wardrobe_icon">女王衣橱</a>
+			<a href="javascript:;" class="queen_huisuo_icon">女王会所</a>
+			<a href="javascript:;" class="queen_share_icon">女王共享</a>
+			<a href="javascript:;" class="queen_car_icon">关注女王</a>
+			<a href="javascript:;" class="queen_country_icon">我的王国</a>
+		</nav>
+	</div>
+</div>
+<script type="text/javascript" src='./js/zepto.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		$('.btn').on('tap',function(){
+			$('.queen_side').toggleClass('selected');
+		})
+
+//		$('body').on('tap',function)
+	})
+</script>
+</body>
+</html>
