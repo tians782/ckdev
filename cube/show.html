@@ -6,28 +6,30 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
-<body class="setbg">
-	<div class="banner_bg">
-		<div class="set_con">
-			<div class="set_btn"></div>
-			<div class="edit_content">
-				<a href="javascript:;">编辑资料</a>
-				<a href="javascript:;">退出账号</a>
+<body class="setbg" onLoad="loaded()">
+<div id="wrapper_con">
+	<div class="wrapper_con">
+		<div class="banner_bg">
+			<div class="set_con">
+				<div class="set_btn"></div>
+				<div class="edit_content">
+					<a href="javascript:;">编辑资料</a>
+					<a href="javascript:;">退出账号</a>
+				</div>
 			</div>
+			<div class="header_pic_con">
+				<div class="header_pic"></div>
+				<span>爱因斯坦的妹妹</span>
+			</div>
+			<nav>
+				<a href="show.html" class="selected">SHOW</a>
+				<a href="crown.html" >皇冠</a>
+				<a href="wardrobe.html">衣橱</a>
+				<a href="message.html">留言</a>
+				<a href="card.html">卡券</a>
+			</nav>
 		</div>
-		<div class="header_pic_con">
-			<div class="header_pic"></div>
-			<span>爱因斯坦的妹妹</span>
-		</div>
-		<nav>
-			<a href="show.html" class="selected">SHOW</a>
-			<a href="crown.html" >皇冠</a>
-			<a href="wardrobe.html">衣橱</a>
-			<a href="message.html">留言</a>
-			<a href="card.html">卡券</a>
-		</nav>
-	</div>
-	<div class="show_content show_con">
+		<div class="show_content show_con">
 		<div class="personal_pic cl">
 			<img src="./images/pic.png">
 			<div class="txt">
@@ -51,9 +53,17 @@
 			<span class="view">1023238</span>
 		</div>
 	</div>
+	</div>
+</div>
 <script type="text/javascript" src='./js/zepto.min.js'></script>
+<script type="text/javascript" src='./js/iscroll.js'></script>
 <script type="text/javascript">
+	var myScroll;
+	function loaded () {
+		myScroll = new IScroll('#wrapper_con', {scrollX: false, scrollY: true, mouseWheel: true, default: true});
+	}
 	$(function(){
+		$('#wrapper_con').css('height',$(window).height());
 		var $set_con = $('.set_con');
 		$('.set_btn').on('click',function(){
 			if($set_con.hasClass('selected')){

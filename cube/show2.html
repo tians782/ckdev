@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>女王魔方</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<body onLoad="loaded()">
+	<div id="wrapper_con">
+		<div class="wrapper_con">
+			<!-- 图片轮播 -->
+			<header>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/p1.jpg" width="100%" height="100%">
+						</div>
+					</div>
+				</div>
+				<div class="page_pagination">
+					<span class="pagination"></span>
+				</div>
+			</header>
+
+			<nav class="view_con">
+				<div class="rel_view">
+					<div class="send_crown"><span>108</span>送她皇冠</div>
+					<div class="comment_icon"></div>
+				</div>
+				<a class="crown_icon" href="javascript:;">105</a>
+				<a class="comment_icon" href="javascript:;">105</a>
+				<a class="view_icon" href="javascript:;">105</a>
+			</nav>
+			<div class="showlist">
+				<div class="title cl">
+					<img src="./images/pic2.jpg"/>
+					<span>爱婴斯坦的没么</span>
+				</div>
+				<p>Box Queen's</p>
+				<p>Box Queen's Box Queen'ss</p>
+				<div class="text_content">
+					Box Queen'sBox Queen'sBox Queen'sBox Queen'sBox Queen'sBox Queen'sBox Queen'sBox Queen'sBox Queen's
+				</div>
+			</div>
+			<div class="huagnguan_content pro">
+				<ul class="dingzhi">
+					<li>
+						<p>女王装备</p>
+						<div class="service_con">
+							<img src="./images/pic.png">
+							<div class="name_title">
+								<span>产品名称XXXX内衣</span>
+								<span>产品描述设计感特别强</span>
+							</div>
+							<div class="send_status">
+								<div class="arrow"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="comment_total">
+				<p class="comment_total_length">7条评论</p>
+				<div class="huagnguan_content select_del">
+					<a href="javascript:;" class="cl">
+						<div class="comment_icon"></div>
+						<img src="./images/pic.png">
+						<div class="name_title">
+							<span>爱因斯坦的妹妹</span>
+							<span class="date">2015.7.2</span>
+							<span>水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分</span>
+						</div>
+					</a>
+					<a href="javascript:;" class="cl">
+						<div class="comment_icon"></div>
+						<img src="./images/pic.png">
+						<div class="name_title">
+							<span>爱因斯坦的妹妹</span>
+							<span class="date">2015.7.2</span>
+							<span>水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分</span>
+						</div>
+					</a>
+					<a href="javascript:;" class="cl">
+						<div class="comment_icon"></div>
+						<img src="./images/pic.png">
+						<div class="name_title">
+							<span>爱因斯坦的妹妹</span>
+							<span class="date">2015.7.2</span>
+							<span>水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分水电费水电费水电费水电费分</span>
+						</div>
+					</a>
+				</div>
+				<a class="more_comment_btn">更多评论</a>
+			</div>
+		</div>
+	</div>
+	<!--评论-->
+	<div class="comment_message">
+		<div class="info_message">
+			<img src="./images/pic.png" />
+			<span>爱因斯坦的妹妹</span>
+			<a class="comment_submit">提交</a>
+		</div>
+		<textarea placeholder="写下你对TA的留言OR评论"></textarea>
+	</div>
+	<script type="text/javascript" src='./js/zepto.min.js'></script>
+	<script type="text/javascript" src='./js/idangerous.swiper.js'></script>
+	<script type="text/javascript" src='./js/iscroll.js'></script>
+	<script type="text/javascript">
+		var myScroll;
+		function loaded () {
+		myScroll = new IScroll('#wrapper_con', {scrollX: false, scrollY: true, mouseWheel: true, default: true});
+	}
+	$(function(){
+		var active = 'tap';
+		$('header,#wrapper_con,.swiper-container,.comment_message').css('height',$(window).height());
+
+		// 首页轮播图
+		var mySwiper = new Swiper('.swiper-container',{
+			pagination: '.pagination',
+			paginationClickable: true
+		});
+		var myScroll;
+
+		$('.comment_icon').on(active,function(){
+			$('.comment_message').addClass('selected');
+		})
+
+		$('.comment_submit').on(active,function(){
+			var $text = $('.comment_message textarea').val();
+			$('.comment_message').removeClass('selected');
+			if($text != '') {
+				$.ajax({
+					type: 'post',
+					dataType: "json",
+					url: dataurl,
+					data: {
+						$name: $name,
+						$text: $text
+					},
+					success: function (data) {
+						if (data.retmsg == 1) {
+
+						} else {
+//							alert("领取失败");
+						}
+					}, error: function () {
+						return;
+					}, complete: function () {
+						return;
+					}
+				});
+			}
+		})
+	})
+</script>
+</body>
+</html>
