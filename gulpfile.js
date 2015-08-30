@@ -18,11 +18,12 @@ var gulp=require('gulp'),
     rev = require('gulp-rev');
 
     path = {
-        html : "cube/*.html",
-        less : "cube/css/*.less",
-        css : "cube/css/*.css",
-        js : "cube/js/*.js",
-        images : "cube/images/*.*"
+        html : "cube-slide/*.html",
+        less : "cube-slide/css/*.less",
+        css : "cube-slide/css/*.css",
+        js : "cube-slide/js/*.js",
+        images : "cube-slide/images/*.*",
+        cssfile:"cube-slide/css"
     };
 
 //监听页面刷新
@@ -61,7 +62,7 @@ gulp.task('less',function() {
         .pipe(less({ compress: true }))
         .on('error', function(e){console.log(e);})
         //.pipe(minifyCSS())
-        .pipe(gulp.dest('cube/css'))
+        .pipe(gulp.dest(path.cssfile))
         .pipe(browserSync.stream());
 })
 //刷新html

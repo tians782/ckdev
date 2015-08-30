@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>女王魔方</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<body>
+	<!-- 图片轮播 -->
+	<div class="qube_slide">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+					<div class="icon2 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+					<div class="icon2 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+					<div class="icon2 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+					<div class="icon2 ico"></div>
+					<div class="icon3 ico"></div>
+					<div class="icon4 ico"></div>
+					<div class="icon5 ico"></div>
+					<div class="icon6 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="icon1 ico"></div>
+					<div class="icon2 ico"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src='./js/zepto.min.js'></script>
+	<script type="text/javascript" src='./js/idangerous.swiper.js'></script>
+	<script type="text/javascript" src='./js/iscroll.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.swiper-container').css('height',$(window).height());
+
+			// 首页轮播图
+			var mySwiper = new Swiper('.swiper-container',{
+//				loop:true,
+				mode: 'vertical',
+				resistance:'100%'
+			});
+
+		})
+</script>
+</body>
+</html>
